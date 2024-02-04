@@ -4,7 +4,7 @@
 <template>
   <div class="container">
     <div class="flex flex-col items-center gap-y-4">
-      <h1>Démarrage Nuxt Strapi</h1>
+      <h1>Démarrage wait</h1>
       <div class="flex gap-x-4">
         <NuxtLink to="/start">
           Documentation
