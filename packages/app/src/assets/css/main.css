@@ -1,9 +1,208 @@
-* {
-	min-width: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
-body {
+* {
 	margin: 0;
 	padding: 0;
-	@apply font-sans;
+	box-sizing: border-box;
+	font-family: "Figtree", sans-serif;
 }
+body {
+	display: grid;
+	place-content: right;
+	width: 100%;
+	background: #131313;
+}
+header {
+	display: grid;
+	margin-top: 5%;
+	grid-template-columns: 2fr 1fr; /* Remove the comma here */
+	position: relative;
+	width: 100%;
+  }
+.container {
+	position: relative;
+	padding: 2%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1em;
+	width: 80%;
+	margin-top: 5%;
+	height: 45vh;
+	transition: all 400ms;
+	/* align-items: center; */
+}
+
+.container:hover .box {
+	filter: grayscale(100%) opacity(24%);
+	transform: translateY(0);
+}
+
+.box {
+	position: relative;
+	background: var(--img) center center;
+	background-size: cover;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 12vw;
+	transform: translateY(0);
+}
+
+.container .box:hover {
+	filter: grayscale(0%) opacity(100%);
+	width: 20vw;
+	transform: translateY(-16px);
+}
+
+.box:nth-child(odd) {
+	transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+	transform: translateY(16px);
+}
+
+.box::after {
+	content: attr(data-text);
+	position: absolute;
+	bottom: 20px;
+	background: #000;
+	color: #fff;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.box:hover::after {
+	transform: translateY(0);
+	opacity: 1;
+	transition-delay: 400ms;
+}
+
+
+.containor {
+	position: relative;
+	padding: 2%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1em;
+	width: 80%;
+	height: 45vh;
+	transition: all 400ms;
+	/* align-items: center; */
+}
+
+.containor:hover .bax {
+	filter: grayscale(100%) opacity(24%);
+	transform: translateY(0);
+}
+
+p .bax {
+	position: relative;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 12vw;
+	transform: translateY(0);
+}
+
+.containor p .bax:hover {
+	filter: grayscale(0%) opacity(100%);
+	width: 20vw;
+	transform: translateY(-16px);
+}
+
+p .bax:nth-child(odd) {
+	transform: translateY(-16px);
+}
+
+p .bax:nth-child(even) {
+	transform: translateY(16px);
+}
+
+p .bax::after {
+	position: absolute;
+	bottom: 20px;
+	background: #000;
+	color: #fff;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+p .bax:hover::after {
+	transform: translateY(0);
+	opacity: 1;
+	transition-delay: 400ms;
+}
+
+
+div#background {
+	margin-top: 20%;
+	height: 400px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	
+  }
+#background img {
+	height: 190px;
+	margin: 0px;
+  }
+  
+  #background figure {
+	float: left;
+	position: relative;
+	background-color: white;
+	text-align: center;
+	font-size: 15px;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 2px 3px 5px rgb(204, 18, 18);
+  }
+  
+  figure.pic1 {
+	-webkit-transform : rotate(-10deg);
+	z-index: 1;
+  }
+  
+  figure.pic2 {
+	-webkit-transform : rotate(15deg);
+	z-index: 2;
+  }
+  #background figure:hover {
+	box-shadow: 5px 10px 100px black;
+	-webkit-transform: scale(1.1,1.1);
+	z-index: 20;
+  }
+
+  #filters {
+	list-style: none;
+	padding:0;
+	display:flex;
+	gap:1rem;
+	justify-content: center;
+}
+.active {
+	background: rgb(179, 2, 2);
+	color: white;
+	border: none;
+}
+#gallery {
+	display: flex;
+	justify-content: center;
+}
+#gallery > * {
+	flex: 1;
+	padding: 1rem;
+}
+.hidden {
+	display: none;
+}
+  

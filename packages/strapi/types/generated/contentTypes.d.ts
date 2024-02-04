@@ -362,6 +362,46 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiSuspectSuspect extends Schema.CollectionType {
+  collectionName: 'suspects';
+  info: {
+    singularName: 'suspect';
+    pluralName: 'suspects';
+    displayName: 'Suspects';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.RichText;
+    slug: Attribute.UID<'api::suspect.suspect', 'name'> & Attribute.Required;
+    date: Attribute.Date;
+    title: Attribute.String;
+    descriptionmurder: Attribute.RichText;
+    datemurder: Attribute.DateTime;
+    image: Attribute.Media;
+    idpicture: Attribute.Media;
+    fingerprint: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::suspect.suspect',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::suspect.suspect',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -778,6 +818,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::suspect.suspect': ApiSuspectSuspect;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
