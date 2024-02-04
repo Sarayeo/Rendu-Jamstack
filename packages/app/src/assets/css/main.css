@@ -15,7 +15,7 @@ body {
 header {
 	display: grid;
 	margin-top: 5%;
-	grid-template-columns: 2fr 1fr; /* Remove the comma here */
+	grid-template-columns: 1fr 1fr; /* Remove the comma here */
 	position: relative;
 	width: 100%;
   }
@@ -142,7 +142,6 @@ p .bax:hover::after {
 	transition-delay: 400ms;
 }
 
-
 div#background {
 	margin-top: 20%;
 	height: 400px;
@@ -152,7 +151,7 @@ div#background {
 	
   }
 #background img {
-	height: 190px;
+	height: 120px;
 	margin: 0px;
   }
   
