@@ -1,68 +1,30 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "victims",
   "info": {
     "singularName": "victim",
     "pluralName": "victims",
-    "displayName": "Victims",
-    "description": ""
+    "displayName": "Victims"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "date": {
-      "type": "datetime"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
-    },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "idpicture": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "fingerprint": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "description": {
-      "type": "richtext"
-    },
-    "title": {
+    "cinamoroll": {
       "type": "string"
     },
-    "descriptionmurder": {
+    "idpicture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "description": {
       "type": "richtext"
     }
   }

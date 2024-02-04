@@ -7,6 +7,7 @@ onMounted(() =>
 console.log({
   suspects,pending,error
 }))
+const search = useSearchStore()
 </script>
 <template>
 
@@ -35,20 +36,10 @@ console.log({
     <div class="flex flex-col items-center color-white ">
       <h1 class="text-4xl font-bold"> Take a look at the suspects and the victim and their stories </h1>
 
-      <ul id="filters">
-	        <li><button class="active" data-filter="all">all</button></li>
-	        <li><button data-filter="rojo">friends</button></li>
-	        <li><button data-filter="verde">accountences</button></li>
-	        <li><button data-filter="azul">unknown</button></li>
-      </ul>
-
-      <div v-if="suspects">
-        <ul class="color-white">
-          <li v-for="suspect in suspects.data" :key="suspect.id">
-            {{ suspect.name}}
-          </li>
-        </ul>
-      </div>
+      <div class="search">
+      <label for="search">look for someone:</label>
+      <input id="search" v-model="search.query" class="px-4 py-2" type="search">
+    </div>
       <div class="container" v-if="suspects">
 	        <div class="box box-2" v-for="suspect in suspects.data" :key="suspect.id" data-text="no name"> <NuxtImg
         :src="suspect.image[0].url" alt="" aria-hidden="true"
