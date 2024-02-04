@@ -23,7 +23,7 @@ console.log({
       <div id="gallery" v-if="suspects">
       <figure class="pic1" v-for="suspect in suspects.data" :key="suspect.id">
         <NuxtImg
-        :src="suspect.image[0].url" alt="" aria-hidden="true"
+        :src="suspect.idpicture.url" alt="" aria-hidden="true"
         class="h-[500px] object-contain object-center w-full bg-white"
       />
         <figcaption>{{ suspect.name}}</figcaption>
@@ -56,7 +56,7 @@ console.log({
       </div>
       <div class="container" v-if="suspects">
 	        <div class="box box-1"  style="--img: url(https://i.pinimg.com/236x/0e/99/c6/0e99c6604d035c3e367c11e2d7dba720.jpg);" data-text= "suspect.name">
-            <p class="bax ">Kuromi</p>
+            <p class="bax"></p>
             </div>
 	        <div class="box box-2" v-for="suspect in suspects.data" :key="suspect.id" data-text="{{ suspect.name}}"> <NuxtImg
         :src="suspect.image[0].url" alt="" aria-hidden="true"
